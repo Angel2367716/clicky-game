@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+.hero {
+    height: 300px;
+    /* width: 100%; */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    /* background-color: rgba(255, 255, 255, 0.432); */
+    background-blend-mode: lighten;   
+    
+    
+  }
+  
+  .hero::after {
+    content: "";
+    display: block;
+    opacity: .10;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: black;
+  }
+  
+  .hero * {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero h1, .hero h2{
+    color:white;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 65px;
+    font-weight: 1000;
+    letter-spacing: 10px;
+
+  
+    
+  }
+  
+  .hero h1 {
+    /* font-size: 40px;
+    padding-top: 140px;
+    */
+    /* margin-top: 3rem; */
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 4rem;
+  }
+  
+  .hero h3 {
+    color: white;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    margin-bottom: 140px;
+    position: relative;
+    text-align: center;
+  }
+  

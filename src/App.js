@@ -1,41 +1,28 @@
-import React, { Component } from "react";
-import FriendCard from "./components/FriendCard";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Wrapper from "./components/Wrapper";
-import friends from "./friends.json";
-import "./App.css";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import ClickyGame from "./pages/ClickyGame";
 
-class App extends Component {
-  //Setting this.state.friends to the friends json array 
-  state ={
-    friends
-  };
+// import FriendCard from "./components/FriendCard";
+// import friends from "./friends.json";
 
-  // remove friend functionality 
-  removeFriend = id => {
-    // console.log (id)
-
-    //Filter this.state.friends for friends with an id no equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-
-    //set this.state.friends equal to the new friends array
-    this.setState({ friends });
-  }
-  render() {
+function App (){
     return (
-      <Wrapper>
-        <h1 className="title">Clicky Game</h1>
-        {this.state.friends.map(friend => (
-          <FriendCard
-          removeFriend={this.removeFriend}
-            id={friend.id}
-            key={friend.id}
-            image={friend.image}
-
-          />
-        ))}
+      <Router>
+        <div style={{height: '100%'}}>
+      <Nav />
+        <Wrapper>
+        <Switch>
+            <Route exact path="/" component={ClickyGame} />
+            <Route exact path="/clickygame" component={ClickyGame} />
+        </Switch>
       </Wrapper>
+      <Footer />
+      </div>
+      </Router>
     );
   }
-}
 
 export default App;
